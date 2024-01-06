@@ -3,5 +3,18 @@
 @tailwind utilities;
 
 .slider {
-  @apply w-[250px] h-[180px] flex-none border-4 border-primary-900 rounded-3xl overflow-hidden backdrop-brightness-50 backdrop-blur-lg;
+  @apply w-[250px] h-[180px] flex-none border-4 border-primary-900 rounded-3xl overflow-hidden cursor-pointer backdrop-brightness-50 backdrop-blur-lg;
 }
+
+.slider:first-child {
+  @apply !ml-0;
+}
+
+.slider img {
+  @apply transition-transform duration-700;
+}
+
+/* .slider.active-slide img,
+.slider:hover img {
+  @apply scale-110;
+} */

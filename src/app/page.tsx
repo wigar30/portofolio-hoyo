@@ -61,7 +61,6 @@ export default function Home() {
 
   const handleImageLoad = () => {
     setIsImageLoad(true)
-    console.log(123)
   }
 
   const handleTransFeatImageEnd = () => {
@@ -70,10 +69,11 @@ export default function Home() {
 
   return (
     <main className="w-screen h-full min-h-screen bg-primary-300 overflow-hidden">
-      <div className='w-full h-full flex'>
+      <div className='w-full h-full flex flex-col'>
         <div className={clsx('fixed top-8 left-10 z-30 transition-all duration-500 delay-200', startAnimate && isImageLoad ? 'translate-x-0 opacity-100' : '-translate-x-[150px] opacity-0')} >
           <Sidebar animate={startAnimate} />
         </div>
+
         <MainWrapper>
           <MainWrapper.Slider>
             <div className={clsx('absolute bottom-44 left-36 transition-all duration-700 delay-300', startAnimate && isImageLoad ? 'translate-x-0 opacity-100' : '-translate-x-[100%] opacity-0')}>
@@ -95,7 +95,7 @@ export default function Home() {
             </div>
           </MainWrapper.Slider>
         </MainWrapper>
-        <div className={clsx('fixed left-40 bottom-52 z-10 transition-all duration-500 delay-300', startAnimate && isImageLoad ? 'translate-x-0 opacity-100' : 'translate-x-[100%] opacity-0')}>
+        <div className={clsx('left-40 bottom-52 z-10 transition-all duration-500 delay-300', startAnimate && isImageLoad ? 'translate-x-0 opacity-100' : 'translate-x-[1000px] opacity-0', transFeatImageEnd ? 'fixed' : 'absolute')}>
           <Slider></Slider>
         </div>
       </div>
