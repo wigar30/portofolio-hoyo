@@ -1,3 +1,4 @@
+import { useStore } from "@/stores/useStore";
 import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react"
@@ -5,10 +6,10 @@ import { useEffect, useState } from "react"
 export const Slider = () => {
   const spaceBetween = 30
   const [windowWidth, setWindowWidth] = useState(0);
-  const [wrapperWidth, setWrapperWidth] = useState(0);
-  const [sliderLength, setSliderLength] = useState(0);
   const [currentTranslateX, setCurrentTranslateX] = useState(0);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
+  const updateIndex = useStore((state) => state.updateIndex)
   
   useEffect(() => {
     const getWindowWidth = window.innerWidth
@@ -24,7 +25,6 @@ export const Slider = () => {
         getSlider.style.width = `${getWidth}px`
       }
 
-      setWrapperWidth(getSliderWrapper.offsetWidth)
       getSliderWrapper.style.transform = `translate3d(${currentTranslateX}px, ${0}px, ${0}px)`
     }
 
@@ -34,8 +34,6 @@ export const Slider = () => {
     }
 
     const getElementSlider = document.getElementsByClassName('slider')
-    setSliderLength(getElementSlider.length)
-
     const arrSilders = Array.from(getElementSlider)
     for (const el of arrSilders) {
       const index = arrSilders.indexOf(el)
@@ -53,7 +51,8 @@ export const Slider = () => {
     const dataIndex = e.currentTarget.getAttribute('data-index')
 
     setCurrentSlideIndex(Number(dataIndex))
-    
+    updateIndex(Number(dataIndex))
+
     if (getSliderWrapper) {
       const nextSlidePixel = (e.currentTarget.clientWidth + (Number(dataIndex) === 0 ? 0 : spaceBetween) + 8) * Number(dataIndex)
       getSliderWrapper.style.transform = `translate3d(${-nextSlidePixel}px, ${0}px, ${0}px)`
