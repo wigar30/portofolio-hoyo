@@ -1,4 +1,6 @@
 export type SliderStore = {
-  currentIndex: number,
+  currentIndex: number
+  isTransitionEnd: boolean
   updateIndex: (index: number) => void
+  updateTransitionEnd: (trans: boolean) => void
 }

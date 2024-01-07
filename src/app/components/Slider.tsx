@@ -1,16 +1,16 @@
-import { useStore } from "@/stores/useStore";
-import clsx from "clsx";
-import Image from "next/image";
-import { useEffect, useState } from "react"
+import { useStore } from '@/stores/useStore'
+import clsx from 'clsx'
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 export const Slider = () => {
   const spaceBetween = 30
-  const [windowWidth, setWindowWidth] = useState(0);
-  const [currentTranslateX, setCurrentTranslateX] = useState(0);
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(0)
+  const [currentTranslateX, setCurrentTranslateX] = useState(0)
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
 
   const updateIndex = useStore((state) => state.updateIndex)
-  
+
   useEffect(() => {
     const getWindowWidth = window.innerWidth
     setWindowWidth(getWindowWidth)
@@ -20,7 +20,7 @@ export const Slider = () => {
     if (getSlider && getSliderWrapper) {
       const getParent = getSlider.parentElement
       if (getParent) {
-        const computedStyle = window.getComputedStyle(getParent);
+        const computedStyle = window.getComputedStyle(getParent)
         const getWidth = windowWidth - parseInt(computedStyle.getPropertyValue('left'))
         getSlider.style.width = `${getWidth}px`
       }
@@ -78,8 +78,7 @@ export const Slider = () => {
         <div className="slider" onClick={handleSliderClick}>
           <Image src="/images/yae-miko-honkai-impact.png" width={250} height={180} alt="fu-xuan-hsr-thumbs"></Image>
         </div>
-        <div id="slider-rest" className="h-4 ml-8 border-r-0 border-4 border-primary-900 bg-primary-950 rounded-l-full flex-none">
-        </div>
+        <div id="slider-rest" className="h-4 ml-8 border-r-0 border-4 border-primary-900 bg-primary-950 rounded-l-full flex-none"></div>
       </div>
     </section>
   )
