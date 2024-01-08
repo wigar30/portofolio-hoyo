@@ -182,7 +182,7 @@ export default function Home() {
           </MainWrapper.Slider>
           <div
             id="slider-controller"
-            className={clsx('fixed left-40 bottom-52 transition-all duration-500 delay-100', startAnimate && isImageLoad ? 'translate-x-0 opacity-100' : 'translate-x-[1000px] opacity-0')}
+            className={clsx('fixed left-40 bottom-52 transition-all duration-500 delay-200', startAnimate && isImageLoad ? 'translate-x-0 opacity-100' : 'translate-x-[1000px] opacity-0')}
           >
             <Slider></Slider>
           </div>
