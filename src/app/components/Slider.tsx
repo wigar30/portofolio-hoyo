@@ -54,8 +54,8 @@ export const Slider = () => {
     updateIndex(Number(dataIndex))
 
     if (getSliderWrapper) {
-      const nextSlidePixel = (e.currentTarget.clientWidth + (Number(dataIndex) === 0 ? 0 : spaceBetween) + 8) * Number(dataIndex)
-      getSliderWrapper.style.transform = `translate3d(${-nextSlidePixel}px, ${0}px, ${0}px)`
+      // const nextSlidePixel = (e.currentTarget.clientWidth + (Number(dataIndex) === 0 ? 0 : spaceBetween) + 8) * Number(dataIndex)
+      // getSliderWrapper.style.transform = `translate3d(${-nextSlidePixel}px, ${0}px, ${0}px)`
     }
   }
 

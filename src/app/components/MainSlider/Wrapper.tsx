@@ -16,9 +16,12 @@ export const MainWrapper = (props: MainWrapperProps) => {
     setWindowWidth(windowWidth)
 
     const getMainWrapper = document.getElementById('main-wrapper')
-    if (getMainWrapper) {
+    const getController = document.getElementById('slider-controller')
+
+    if (getMainWrapper && getController) {
       getMainWrapper.style.width = `${windowWidth}px`
       getMainWrapper.style.transform = `translateX(${0}px)`
+      getController.style.transform = `translateX(${0}px)`
     }
   }, [])
 
@@ -28,9 +31,11 @@ export const MainWrapper = (props: MainWrapperProps) => {
 
   const handleChangeSlider = (index: number) => {
     const getMainWrapper = document.getElementById('main-wrapper')
-    if (getMainWrapper) {
+    const getController = document.getElementById('slider-controller')
+    if (getMainWrapper && getController) {
       updateTransitionEnd(false)
       const nextSlidePixel = windowWidth * index
+      getController.style.transform = `translateX(${index === 1 ? nextSlidePixel + 400 : nextSlidePixel}px)`
       getMainWrapper.style.transform = `translateX(${-nextSlidePixel}px)`
     }
   }

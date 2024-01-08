@@ -14,7 +14,15 @@
   @apply transition-transform duration-700;
 }
 
-/* .slider.active-slide img,
-.slider:hover img {
-  @apply scale-110;
-} */
+.bronya-apho-bg {
+  background-image: url('/images/bronya-apho-bg-2.png');
+  @apply w-screen h-screen bg-no-repeat bg-cover;
+}
+.yae-miko-bg {
+  background-image: url('/images/yae-miko-bg.png');
+  @apply w-screen h-screen bg-no-repeat bg-cover;
+}
+.fu-xuan-bg {
+  background-image: url('/images/fu-xuan-bg.png');
+  @apply w-screen h-screen bg-no-repeat bg-cover;
+}
