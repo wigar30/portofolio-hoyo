@@ -82,9 +82,6 @@ export const Slider = () => {
         <div className="slider" onClick={handleSliderClick}>
           <Image src="/images/yae-miko-honkai-impact.png" width={250} height={180} alt="fu-xuan-hsr-thumbs"></Image>
         </div>
-        <div className="slider" onClick={handleSliderClick}>
-          <Image src="/images/yae-miko-honkai-impact.png" width={250} height={180} alt="fu-xuan-hsr-thumbs"></Image>
-        </div>
         <div id="slider-rest" className="h-4 ml-8 border-r-0 border-4 border-primary-900 bg-primary-950 rounded-l-full flex-none"></div>
       </div>
     </section>
