@@ -2,6 +2,7 @@ import { useStore } from '@/stores/useStore'
 import clsx from 'clsx'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import { Icon } from './Base/Icon'
 
 export const Slider = () => {
   const spaceBetween = 30
@@ -64,8 +65,11 @@ export const Slider = () => {
       <div id="slider-wrapper" className="absolute flex left-0 transition-all duration-300 !overflow-y-auto">
         <div className="flex items-start space-x-6">
           <div className="w-6 h-6 border-4 border-primary-900 rounded-full bg-primary-900" />
-          <div className="w-10 h-10 border-4 border-primary-900 rounded-full bg-none p-1">
-            <div className="w-full h-full bg-primary-800 rounded-full" />
+          <div className="relative w-14 h-14 group/nav cursor-pointer">
+            <div className="w-10 h-10 absolute border-4 border-primary-900 rounded-full bg-none p-1 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transition-all duration-300 group-hover/nav:w-14 group-hover/nav:h-14" />
+            <div className="w-6 h-6 bg-primary-800 rounded-full absolute flex items-center justify-center top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transition-all duration-300 group-hover/nav:delay-100 group-hover/nav:w-9 group-hover/nav:h-9">
+              <Icon icon="arrow_back_ios" className="text-base text-primary-200 cursor-pointer w-fit ml-1" />
+            </div>
           </div>
         </div>
 
@@ -74,6 +78,9 @@ export const Slider = () => {
         </div>
         <div className="slider" onClick={handleSliderClick}>
           <Image src="/images/bronya-apho.png" width={250} height={180} alt="fu-xuan-hsr-thumbs"></Image>
+        </div>
+        <div className="slider" onClick={handleSliderClick}>
+          <Image src="/images/yae-miko-honkai-impact.png" width={250} height={180} alt="fu-xuan-hsr-thumbs"></Image>
         </div>
         <div className="slider" onClick={handleSliderClick}>
           <Image src="/images/yae-miko-honkai-impact.png" width={250} height={180} alt="fu-xuan-hsr-thumbs"></Image>

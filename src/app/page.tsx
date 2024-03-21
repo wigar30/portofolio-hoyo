@@ -90,7 +90,10 @@ export default function Home() {
                 <Image
                   id="fuxuan"
                   priority={true}
-                  className={clsx('absolute z-20 transition-all duration-500', startAnimate && isImageLoad && isTransitionEnd && currentIndex === 0 ? 'right-0 opacity-100' : '-right-2 opacity-0')}
+                  className={clsx(
+                    'absolute z-20 -top-6 transition-opacity duration-500',
+                    startAnimate && isImageLoad && isTransitionEnd && currentIndex === 0 ? 'right-0 opacity-100' : '-right-2 opacity-0'
+                  )}
                   src="/images/fu-xuan-hsr.png"
                   width={800}
                   height={800}
@@ -101,7 +104,10 @@ export default function Home() {
                 <Image
                   id="fuxuan-bg"
                   priority={true}
-                  className={clsx('absolute transition-all delay-75 duration-500', startAnimate && isImageLoad && isTransitionEnd && currentIndex === 0 ? '-right-6 opacity-100' : 'right-0 opacity-0')}
+                  className={clsx(
+                    'absolute -top-6 transition-opacity delay-75 duration-500',
+                    startAnimate && isImageLoad && isTransitionEnd && currentIndex === 0 ? '-right-6 opacity-100' : 'right-0 opacity-0'
+                  )}
                   src="/images/fu-xuan-hsr-black.png"
                   width={800}
                   height={800}
@@ -125,7 +131,7 @@ export default function Home() {
                 <Image
                   id="bronya"
                   priority={true}
-                  className={clsx('absolute z-20 transition-all duration-500', startAnimate && isTransitionEnd && currentIndex === 1 ? 'left-0 opacity-100' : '-left-2 opacity-0')}
+                  className={clsx('absolute z-20 transition-opacity duration-500', startAnimate && isTransitionEnd && currentIndex === 1 ? 'left-0 opacity-100' : '-left-2 opacity-0')}
                   src="/images/bronya-apho.png"
                   width={800}
                   height={800}
@@ -136,7 +142,7 @@ export default function Home() {
                 <Image
                   id="bronya-bg"
                   priority={true}
-                  className={clsx('absolute transition-all delay-75 duration-500', startAnimate && isTransitionEnd && currentIndex === 1 ? '-left-6 opacity-100' : 'left-0 opacity-0')}
+                  className={clsx('absolute transition-opacity delay-75 duration-500', startAnimate && isTransitionEnd && currentIndex === 1 ? '-left-6 opacity-100' : 'left-0 opacity-0')}
                   src="/images/bronya-apho-black.png"
                   width={800}
                   height={800}
@@ -160,7 +166,7 @@ export default function Home() {
                 <Image
                   id="yaemiko"
                   priority={true}
-                  className={clsx('absolute z-20 transition-all duration-500', startAnimate && isTransitionEnd && currentIndex === 2 ? 'right-0 opacity-100' : '-right-2 opacity-0')}
+                  className={clsx('absolute -top-6 z-20 transition-opacity duration-500', startAnimate && isTransitionEnd && currentIndex === 2 ? 'right-0 opacity-100' : '-right-2 opacity-0')}
                   src="/images/yae-miko-honkai-impact.png"
                   width={600}
                   height={800}
@@ -171,7 +177,7 @@ export default function Home() {
                 <Image
                   id="yaemiko-bg"
                   priority={true}
-                  className={clsx('absolute transition-all duration-500 delay-75', startAnimate && isTransitionEnd && currentIndex === 2 ? 'right-8 -top-2 opacity-100' : 'right-0 opacity-0')}
+                  className={clsx('absolute -top-6 transition-opacity duration-500 delay-75', startAnimate && isTransitionEnd && currentIndex === 2 ? 'right-8 -top-2 opacity-100' : 'right-0 opacity-0')}
                   src="/images/yae-miko-honkai-impact-black.png"
                   width={600}
                   height={800}
@@ -182,7 +188,7 @@ export default function Home() {
           </MainWrapper.Slider>
           <div
             id="slider-controller"
-            className={clsx('fixed left-40 bottom-52 transition-all duration-500 delay-200', startAnimate && isImageLoad ? 'translate-x-0 opacity-100' : 'translate-x-[1000px] opacity-0')}
+            className={clsx('fixed z-40 left-40 bottom-52 transition-all duration-500 delay-200', startAnimate && isImageLoad ? 'translate-x-0 opacity-100' : 'translate-x-[1000px] opacity-0')}
           >
             <Slider></Slider>
           </div>
