@@ -177,7 +177,10 @@ export default function Home() {
                 <Image
                   id="yaemiko-bg"
                   priority={true}
-                  className={clsx('absolute -top-6 transition-opacity duration-500 delay-75', startAnimate && isTransitionEnd && currentIndex === 2 ? 'right-8 -top-2 opacity-100' : 'right-0 opacity-0')}
+                  className={clsx(
+                    'absolute -top-6 transition-opacity duration-500 delay-75',
+                    startAnimate && isTransitionEnd && currentIndex === 2 ? 'right-8 -top-2 opacity-100' : 'right-0 opacity-0'
+                  )}
                   src="/images/yae-miko-honkai-impact-black.png"
                   width={600}
                   height={800}
@@ -188,7 +191,7 @@ export default function Home() {
           </MainWrapper.Slider>
           <div
             id="slider-controller"
-            className={clsx('fixed z-40 left-40 bottom-52 transition-all duration-500 delay-200', startAnimate && isImageLoad ? 'translate-x-0 opacity-100' : 'translate-x-[1000px] opacity-0')}
+            className={clsx('fixed left-40 bottom-52 transition-all duration-500 delay-200', startAnimate && isImageLoad ? 'translate-x-0 opacity-100' : 'translate-x-[1000px] opacity-0')}
           >
             <Slider></Slider>
           </div>

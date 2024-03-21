@@ -63,13 +63,13 @@ export const Slider = () => {
   return (
     <section id="slider" className={clsx('relative')}>
       <div id="slider-wrapper" className="absolute flex left-0 transition-all duration-300 !overflow-y-auto">
-        <div className="flex items-start space-x-6">
-          <div className="w-6 h-6 border-4 border-primary-900 rounded-full bg-primary-900" />
-          <div className="relative w-14 h-14 group/nav cursor-pointer">
+        <div className="flex items-start space-x-2">
+          <div className="relative w-8 h-8 top-3">
+            <div className="w-6 h-6 border-4 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 border-primary-900 rounded-full bg-primary-900 transition-all duration-300 hover:w-8 hover:h-8" />
+          </div>
+          <div className="relative w-14 h-14 group/nav">
             <div className="w-10 h-10 absolute border-4 border-primary-900 rounded-full bg-none p-1 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transition-all duration-300 group-hover/nav:w-14 group-hover/nav:h-14" />
-            <div className="w-6 h-6 bg-primary-800 rounded-full absolute flex items-center justify-center top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transition-all duration-300 group-hover/nav:delay-100 group-hover/nav:w-9 group-hover/nav:h-9">
-              <Icon icon="arrow_back_ios" className="text-base text-primary-200 cursor-pointer w-fit ml-1" />
-            </div>
+            <div className="w-6 h-6 bg-primary-800 rounded-full absolute flex items-center justify-center top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transition-all duration-300 group-hover/nav:delay-100 group-hover/nav:w-10 group-hover/nav:h-10"></div>
           </div>
         </div>
 
